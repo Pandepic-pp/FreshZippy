@@ -122,10 +122,9 @@ const FormContainer = styled.div`
 
 const Container = styled.div`
   width: 100vw;
-  height: 85vh;
+  height: 86.5vh;
   display: flex;
   justify-content: center;
   position: relative;
-  background-size: inherit;
   background-image: url("https://media.istockphoto.com/id/170034281/photo/healthy-organic-vegetables-on-a-wooden-background.jpg?s=2048x2048&w=is&k=20&c=u2w8PYRf5rAlz3dTz85us7POzKLDSK2MP9Q_xmbZj8Y=");
 `;
