@@ -8,6 +8,7 @@ import Login from "./screens/SignUp.jsx";
 import SignIn from "./screens/SignIn.jsx";
 import { TokenProvider } from "./context/storeContext.jsx";
 import UserContent from "./screens/UserContent.jsx";
+import ShopPage from "./screens/ShopPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     path: "/userContent",
     element: <UserContent></UserContent>,
   },
+  {
+    path: "/shopPage",
+    element: <ShopPage />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

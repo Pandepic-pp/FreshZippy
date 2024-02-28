@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Card from "../components/Card";
 import Carousel from "../components/Carousel";
+import { Link } from "react-router-dom";
 // import foodData from "../json files/shopData.json";
 let API = "http://localhost:4000/items";
 import styled from "styled-components";
@@ -44,9 +45,14 @@ const Home = () => {
             <h1>Vegetables and Fruits</h1>
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               {vegetableShops.map((item, index) => (
-                <div key={index}>
+                <Link
+                  to="/shopPage"
+                  state={{ item }}
+                  key={index}
+                  style={{ textDecoration: "none", color: "white" }}
+                >
                   <Card shopDetail={item} />
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -54,9 +60,14 @@ const Home = () => {
             <h1>Bread and Dairy</h1>
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               {breadShops.map((item, index) => (
-                <div key={index}>
+                <Link
+                  to="/shopPage"
+                  state={{ item }}
+                  key={index}
+                  style={{ textDecoration: "none", color: "white" }}
+                >
                   <Card shopDetail={item} />
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -64,9 +75,14 @@ const Home = () => {
             <h1>Grains and Cereals</h1>
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               {grainShops.map((item, index) => (
-                <div key={index}>
+                <Link
+                  to="/shopPage"
+                  state={{ item }}
+                  key={index}
+                  style={{ textDecoration: "none", color: "white" }}
+                >
                   <Card shopDetail={item} />
-                </div>
+                </Link>
               ))}
             </div>
           </div>
