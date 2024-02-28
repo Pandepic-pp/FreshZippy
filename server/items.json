@@ -1,0 +1,71 @@
+[
+  {
+    "shopName": "Fresh Mart",
+    "shopImg": "https://media.istockphoto.com/id/1339725283/photo/image-of-unrecognisable-market-traders-selling-fruits-and-vegetables-from-outdoor-market.jpg?s=1024x1024&w=is&k=20&c=DeaPJ61duo8SpaEzrg5mduWEbAr2MRz8j7HxuWqvrv4=",
+    "options": ["vegetables", "fruits"],
+    "vegetables": [
+      "carrots",
+      "spinach",
+      "bell peppers",
+      "tomatoes",
+      "broccoli"
+    ],
+    "fruits": ["apples", "bananas", "oranges", "strawberries", "kiwis"]
+  },
+  {
+    "shopName": "Green Grocer",
+    "shopImg": "https://media.istockphoto.com/id/487049339/photo/greengrocery-varanasi-india.jpg?s=1024x1024&w=is&k=20&c=74TTyUVgd6lbkF6_DSGmQHGUAQhf9XcDLFzKTrZ0tu4=",
+    "options": ["vegetables", "fruits"],
+    "vegetables": ["cucumbers", "lettuce", "onions", "potatoes", "zucchini"],
+    "fruits": ["grapes", "peaches", "pineapples", "watermelons", "blueberries"]
+  },
+  {
+    "shopName": "Organic Oasis",
+    "shopImg": "https://media.istockphoto.com/id/1497253848/photo/fruit-and-vegetable-shop-in-leh-india.jpg?s=1024x1024&w=is&k=20&c=Q5E-TCLDF-zixptIGK6FouCHxr1bK0AdLEiDa6KC-sk=",
+    "options": ["vegetables", "fruits"],
+    "vegetables": ["kale", "celery", "mushrooms", "eggplant", "asparagus"],
+    "fruits": ["pears", "plums", "cherries", "mangoes", "raspberries"]
+  },
+  {
+    "shopName": "Dairy Delight",
+    "shopImg": "https://i.pinimg.com/564x/20/f6/cf/20f6cf8f0374ce509c39a0be5edec1af.jpg",
+    "options": ["bread", "dairy"],
+    "bread": ["whole wheat bread", "sourdough", "baguette"],
+    "dairy": ["milk", "cheese", "yogurt", "butter"]
+  },
+  {
+    "shopName": "Creamy Corner",
+    "shopImg": "https://i.pinimg.com/564x/98/f6/c1/98f6c1740b45ea52f0c5f7b445a70c18.jpg",
+    "options": ["bread", "dairy"],
+    "bread": ["rye bread", "ciabatta", "multigrain"],
+    "dairy": ["cream", "cottage cheese", "cream cheese", "whipped cream"]
+  },
+  {
+    "shopName": "Butter Barn",
+    "shopImg": "https://example.com/butterbarn.jpg",
+    "options": ["bread", "dairy"],
+    "bread": ["pita bread", "focaccia", "English muffin"],
+    "dairy": ["margarine", "ghee", "condensed milk", "cream cheese"]
+  },
+  {
+    "shopName": "Grain Palace",
+    "shopImg": "https://media.istockphoto.com/id/894623766/photo/grocery-store-on-streets-of-varanasi.jpg?s=1024x1024&w=is&k=20&c=ClO5vlAy8TUFDgNJLL3IK5JxOUhphvgBlED34oJ2yVE=",
+    "options": ["grains", "cereals"],
+    "grains": ["rice", "quinoa", "barley", "bulgur", "oats"],
+    "cereals": ["corn flakes", "granola", "bran flakes", "rice crisps"]
+  },
+  {
+    "shopName": "Cereal Corner",
+    "shopImg": "https://media.istockphoto.com/id/1365879833/photo/different-spices-and-herbs-in-street-market-in-karnataka-displayed-the-traditional-indian.jpg?s=1024x1024&w=is&k=20&c=yrR7uD21Gkw8HWNdnuwN1DASezuinS_S0-CI_vao18o=",
+    "options": ["grains", "cereals"],
+    "grains": ["wheat", "rye", "buckwheat", "amaranth", "farro"],
+    "cereals": ["muesli", "puffed rice", "cornmeal", "oat clusters"]
+  },
+  {
+    "shopName": "Whole Grain Wonderland",
+    "shopImg": "https://media.istockphoto.com/id/1323281517/photo/mysore-city-open-food-market-in-india.jpg?s=1024x1024&w=is&k=20&c=0Qz8RVIFcEr4QXO0PABMJRk2KifCcZz1F74sczl-2Oo=",
+    "options": ["grains", "cereals"],
+    "grains": ["millet", "spelt", "teff", "sorghum", "wild rice"],
+    "cereals": ["shredded wheat", "multigrain flakes", "oat bran", "rice puffs"]
+  }
+]
