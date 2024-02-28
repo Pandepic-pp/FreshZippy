@@ -28,7 +28,7 @@
   },
   {
     "shopName": "Dairy Delight",
-    "shopImg": "https://i.pinimg.com/564x/20/f6/cf/20f6cf8f0374ce509c39a0be5edec1af.jpg",
+    "shopImg": "https://media.istockphoto.com/id/620983078/photo/smiling-women-selling-fresh-pastry-and-loaves.jpg?s=1024x1024&w=is&k=20&c=vtRefsjt1KxymYA0C4f7bBUIymrFXXSHonhf4s9hF0A=",
     "options": ["bread", "dairy"],
     "bread": ["whole wheat bread", "sourdough", "baguette"],
     "dairy": ["milk", "cheese", "yogurt", "butter"]
@@ -42,7 +42,7 @@
   },
   {
     "shopName": "Butter Barn",
-    "shopImg": "https://example.com/butterbarn.jpg",
+    "shopImg": "https://media.istockphoto.com/id/155284065/photo/bakery.jpg?s=1024x1024&w=is&k=20&c=6zwUNjnV9UtLDjSHZxhZEM7fGgCikXZp_JIZrTBfGTs=",
     "options": ["bread", "dairy"],
     "bread": ["pita bread", "focaccia", "English muffin"],
     "dairy": ["margarine", "ghee", "condensed milk", "cream cheese"]
@@ -63,7 +63,7 @@
   },
   {
     "shopName": "Whole Grain Wonderland",
-    "shopImg": "https://media.istockphoto.com/id/1323281517/photo/mysore-city-open-food-market-in-india.jpg?s=1024x1024&w=is&k=20&c=0Qz8RVIFcEr4QXO0PABMJRk2KifCcZz1F74sczl-2Oo=",
+    "shopImg": "https://media.istockphoto.com/id/1443835063/photo/organic-shop-interior-with-various-legumes-healthy-eatings-fruits-and-vegetables.jpg?s=1024x1024&w=is&k=20&c=eyvbyvXvCG2hgJJqpA--84cUUbPiQ7asV7lANIyYa1g=",
     "options": ["grains", "cereals"],
     "grains": ["millet", "spelt", "teff", "sorghum", "wild rice"],
     "cereals": ["shredded wheat", "multigrain flakes", "oat bran", "rice puffs"]

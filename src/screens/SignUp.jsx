@@ -157,7 +157,7 @@ const FormContainer = styled.div`
 
 const Container = styled.div`
   width: 100vw;
-  height: 85vh;
+  height: 86.5vh;
   display: flex;
   justify-content: center;
   position: relative;
