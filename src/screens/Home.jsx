@@ -5,17 +5,23 @@ import Card from "../components/Card";
 import Carousel from "../components/Carousel";
 // import foodData from "../json files/shopData.json";
 let API = "http://localhost:4000/items";
+import styled from "styled-components";
 
 const Home = () => {
   let [shopDetails, setShopDetails] = useState([]);
-  let [uniqueOptions, setUniqueOptions] = useState([]);
+  let [vegetableShops, setVegetableShops] = useState([]);
+  let [breadShops, setBreadShops] = useState([]);
+  let [grainShops, setGrainShops] = useState([]);
 
   const fetchApiData = async (url) => {
     try {
       const res = await fetch(url);
       const data = await res.json();
-      //console.log(data);
+      console.log(data);
       setShopDetails(data);
+      setVegetableShops(data.slice(0, 3));
+      setBreadShops(data.slice(3, 6));
+      setGrainShops(data.slice(6, 9));
     } catch (error) {
       console.log(error);
     }
@@ -25,31 +31,46 @@ const Home = () => {
     fetchApiData(API);
   }, []);
 
-  const allOptions = shopDetails.reduce((accumulator, current) => {
-    return [...accumulator, current.options];
-  }, []);
-
-  // Use Set to automatically remove duplicates
-  let filteredOptions = [...new Set(allOptions)];
-  uniqueOptions = Array.from(
-    new Set(filteredOptions.map(JSON.stringify)),
-    JSON.parse
-  );
-  //console.log(uniqueOptions);
+  console.log(vegetableShops);
+  console.log(breadShops);
+  console.log(grainShops);
 
   return (
     <div>
       <Navbar>
         <Carousel />
-        {
-          <div className="m-3">
-            {shopDetails.map((item, index) => (
-              <div key={index}>
-                <Card shopDetail={item} />
-              </div>
-            ))}
+        <Container className="m-3">
+          <div className="vegetableShops">
+            <h1>Vegetables and Fruits</h1>
+            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+              {vegetableShops.map((item, index) => (
+                <div key={index}>
+                  <Card shopDetail={item} />
+                </div>
+              ))}
+            </div>
           </div>
-        }
+          <div className="breadShops">
+            <h1>Bread and Dairy</h1>
+            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+              {breadShops.map((item, index) => (
+                <div key={index}>
+                  <Card shopDetail={item} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="grainShops">
+            <h1>Grains and Cereals</h1>
+            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+              {grainShops.map((item, index) => (
+                <div key={index}>
+                  <Card shopDetail={item} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
         <Footer />
       </Navbar>
     </div>
@@ -57,3 +78,14 @@ const Home = () => {
 };
 
 export default Home;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  .vegetableShops,
+  .breadShops,
+  .grainShops {
+    margin: 20px;
+    text-align: center;
+  }
+`;
