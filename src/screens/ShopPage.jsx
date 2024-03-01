@@ -57,10 +57,10 @@ const ShopPage = () => {
   const handleCost = () => {
     let newTotalCost = 0;
     for (const item in itemFrequency) {
-      newTotalCost += price[item] * itemFrequency[item];
+      newTotalCost += price[item] * 10.0 * itemFrequency[item];
     }
     return newTotalCost;
-  }
+  };
 
   return (
     <Navbar>
@@ -83,7 +83,10 @@ const ShopPage = () => {
                 <h2>{element}</h2>
                 <div
                   className="buttons"
-                  style={{ display: "flex", gap: "20px" }}
+                  style={{
+                    display: "flex",
+                    gap: "20px",
+                  }}
                 >
                   <button
                     className="btn btn-danger"
@@ -105,9 +108,13 @@ const ShopPage = () => {
                   </button>
                   <div
                     className="frequency"
-                    style={{ display: "flex", alignItems: "center" }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      width: "100px",
+                    }}
                   >
-                    Total: {itemFrequency[element]}
+                    Total: {itemFrequency[element] / 2} kg
                   </div>
                 </div>
               </div>
@@ -116,8 +123,8 @@ const ShopPage = () => {
         </ProductContainer>
       </div>
       <TotalCost>
-        <p>Total Cost: Rs {handleCost()}</p>
-        <Link to="/cart">
+        <p>Total Cost: Rs {handleCost() / 2}</p>
+        <Link to="/cart" state={{ price, itemFrequency }}>
           <button className="btn btn-danger">Go to cart </button>
         </Link>
       </TotalCost>
@@ -162,5 +169,5 @@ const TotalCost = styled.div`
   background-color: #00bc8c;
   padding: 10px;
   border-radius: 5px;
-  width: 150px;
+  width: 200px;
 `;

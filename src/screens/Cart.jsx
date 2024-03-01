@@ -1,44 +1,89 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
+import { useLocation } from "react-router-dom";
+import styled from "styled-components";
 
 const Cart = () => {
-  // Initialize count as an array of 10 elements, each initialized to 0
-  const [count, setCount] = useState(Array(10).fill(0));
+  const location = useLocation();
+  const price = location.state.price;
+  console.log(price);
+  const itemFrequency = location.state.itemFrequency;
 
-  const handleChange = (index, value) => {
-    const newCount = [...count];
-    newCount[index] = parseInt(value);
-    setCount(newCount);
-  };
+  let count = 0,
+    totalCost = 0;
+  for (let key in itemFrequency) {
+    if (itemFrequency[key] !== 0) count++;
+  }
 
-  const calculateTotal = () => {
-    let total = 0;
-    count.forEach((value, index) => {
-      total += (index + 1) * value;
-    });
-    return total.toFixed(1);
-  };
+  const itemNames = Object.keys(itemFrequency);
+
+  itemNames.forEach((itemName) => {
+    {
+      totalCost += (itemFrequency[itemName] / 2) * price[itemName] * 10;
+    }
+  });
 
   return (
     <Navbar>
-      <div style={{ textAlign: "center", marginTop: "50px" }}>
-        {count.map((value, index) => (
-          <div key={index}>
-            <input
-              type="number"
-              value={value}
-              onChange={(e) => handleChange(index, e.target.value)}
-              style={{ marginTop: "20px" }}
-            />
-            <h1>
-              Total {index + 1}: {value * (index + 1)}
-            </h1>
-          </div>
-        ))}
-        <h1>Total: {calculateTotal()}</h1>
+        <div style={{backgroundImage:
+            "url('https://media.istockphoto.com/id/170034281/photo/healthy-organic-vegetables-on-a-wooden-background.jpg?s=2048x2048&w=is&k=20&c=u2w8PYRf5rAlz3dTz85us7POzKLDSK2MP9Q_xmbZj8Y=')"}}>
+      <MainContainer>
+        <Grid count={count + 2}>
+          <h1>Billing</h1>
+          <hr></hr>
+          <hr></hr>
+          {itemNames.map((itemName, index) =>
+            itemFrequency[itemName] ? (
+              <React.Fragment key={index}>
+                <h2>{itemName}</h2>
+                <h2>{`${itemFrequency[itemName] / 2} (Rs ${
+                  price[itemName] * 2
+                }/kg)`}</h2>
+              </React.Fragment>
+            ) : null
+          )}
+          <hr></hr>
+          <hr></hr>
+          <h1>Total</h1>
+          <h1>Rs {totalCost}</h1>
+        </Grid>
+      </MainContainer>
       </div>
     </Navbar>
   );
 };
 
 export default Cart;
+
+const MainContainer = styled.div`
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(
+    ${(props) => props.count},
+    1fr
+  ); /* Use template string to dynamically set row count */
+  background-color: #00bc8c;
+  margin: 4%;
+  border-radius: 15px;
+  gap: 5px;
+  padding: 20px;
+  text-align: center;
+  :first-child {
+    grid-column: 1 / -1;
+  }
+`;
