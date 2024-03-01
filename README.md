@@ -2,7 +2,7 @@
 <h1>Freshzippy</h1>
 <br>
 <ul>
-<li>FreshZippy is a revolutionary grocery delivery website that prioritizes transparency and trust in every transaction. </li>
+<li>FreshZippy, a startup idea, is a revolutionary grocery delivery website that prioritizes transparency and trust in every transaction. </li>
 <li>Unlike other platforms, FreshZippy provides customers with the name of the store from which their groceries are sourced, ensuring complete transparency throughout the shopping experience. </li>
   <li>This unique feature enhances consumer confidence and sets FreshZippy apart in the competitive grocery delivery market.</li>
 </ul>
