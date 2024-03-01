@@ -14,10 +14,24 @@ const ShopPage = () => {
 
   let { shopName, shopImg, options } = shopStorage.item;
 
+  // Assuming jsonData contains the JSON object you provided
+  const {
+    options: [firstOption, secondOption],
+    [firstOption]: firstItems,
+    [secondOption]: secondItems,
+  } = shopStorage.item;
+
+  const shopItems = [firstOption, ...firstItems, secondOption, ...secondItems];
+  console.log(shopItems);
+
   return (
     <Navbar>
       <Container>
-        
+        {shopItems.map((element, index) => (
+          <Product key={index}>
+            <h1>{element}</h1>
+          </Product>
+        ))}
       </Container>
     </Navbar>
   );
@@ -27,17 +41,20 @@ export default ShopPage;
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  gap: 20px;
-  /* .navbar {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    height: 75px;
-    position: absolute;
-    top: 50px;
-    border-radius: 10px;
-  } */
+  margin: 2%;
+`;
+
+const Product = styled.div`
+  background-color: #28af70;
+  margin: 20px;
+  width: 40%;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
