@@ -1,4 +1,4 @@
-( I am creating this project within 35 days of learning react. It may not look appealing but considering that I only started a month ago, I think this is great. I have great problem-solving abilities as I am a competitive programmer, quick learning aptitude, and have a collaborative spirit. )
+( I am creating this project within 45 days of learning react.js and node.js. It may not look appealing but considering that I only started a month ago, I think this is great. I have great problem-solving abilities as I am a competitive programmer, quick learning aptitude, and have a collaborative spirit. )
 <h1>Freshzippy</h1>
 <br>
 <ul>
