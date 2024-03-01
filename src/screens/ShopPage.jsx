@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const api = "http://localhost:4000/price";
 
@@ -9,7 +10,6 @@ const ShopPage = () => {
   const location = useLocation();
   const [shopStorage, setShopStorage] = useState(location.state);
   const [price, setPrice] = useState({});
-  const [totalCost, setTotalCost] = useState(0);
   const [itemFrequency, setItemFrequency] = useState({});
 
   const fetchApi = async () => {
@@ -52,12 +52,15 @@ const ShopPage = () => {
     }));
 
     // Calculate the new total cost based on updated frequency
+  };
+
+  const handleCost = () => {
     let newTotalCost = 0;
     for (const item in itemFrequency) {
       newTotalCost += price[item] * itemFrequency[item];
     }
-    setTotalCost(newTotalCost);
-  };
+    return newTotalCost;
+  }
 
   return (
     <Navbar>
@@ -112,7 +115,12 @@ const ShopPage = () => {
           ))}
         </ProductContainer>
       </div>
-      <TotalCost>Total Cost: Rs {totalCost}</TotalCost>
+      <TotalCost>
+        <p>Total Cost: Rs {handleCost()}</p>
+        <Link to="/cart">
+          <button className="btn btn-danger">Go to cart </button>
+        </Link>
+      </TotalCost>
     </Navbar>
   );
 };
@@ -154,4 +162,5 @@ const TotalCost = styled.div`
   background-color: #00bc8c;
   padding: 10px;
   border-radius: 5px;
+  width: 150px;
 `;
