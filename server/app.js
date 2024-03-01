@@ -11,7 +11,7 @@ app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 app.use("/user", userRoute);
-app.use("/items", itemRoutes);
+app.use("/", itemRoutes);
 app.listen(PORT, (err) => {
   if (!err) {
     console.log(`Server is running in ${PORT}`);
