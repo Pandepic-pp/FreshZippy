@@ -36,9 +36,9 @@ To get started with FreshZippy, follow these steps:
    $ node app.js
    ```
    
-1.  Now open a new terminal and run the website on your local system using the below command:
+1.  Now open a new terminal and run the website on your local system using the below command.
 
-  ```bash
+   ```bash
    $ npm run dev
    ```
 
