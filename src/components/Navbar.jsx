@@ -8,10 +8,10 @@ const Navbar = ({ children }) => {
   return (
     <>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-success bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg navbar-dark" style={{background: "#28a745"}}>
           <div className="container-fluid">
             <Link className="navbar-brand fs-1 fst-italic" to="/">
-              FreshZippy
+              <h1 style={{ fontSize: "2.5rem" }}>FreshZippy</h1>
             </Link>
             <button
               className="navbar-toggler"
@@ -40,14 +40,14 @@ const Navbar = ({ children }) => {
                   <div className="userLinks">
                     {getTokenCheck.getTokenInLS() == undefined ||
                     getTokenCheck.getTokenInLS() == null ? (
-                      <>
+                      <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
                         <Link className="nav-link" to="/signup">
-                          Sign up
+                          <p style={{ fontSize: "1rem" }}>Sign up</p>
                         </Link>
                         <Link className="nav-link" to="/signin">
-                          Sign in
+                          <p style={{ fontSize: "1rem" }}>Sign in</p>
                         </Link>
-                      </>
+                      </div>
                     ) : (
                       <>
                         <Link className="nav-link " to="/userContent">
@@ -72,7 +72,7 @@ export default Navbar;
 const NavDiv = styled.div`
   display: flex;
   align-items: center;
-  width: 81vw;
+  width: 80vw;
   justify-content: end;
   .userLinks {
     display: flex;

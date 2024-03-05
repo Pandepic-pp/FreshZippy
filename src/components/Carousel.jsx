@@ -18,7 +18,7 @@ const Carousel = () => {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success text-white bg-success" type="submit">
+              <button className="btn btn-outline-success text-white" style={{background: "#28a745"}} type="submit">
                 Search
               </button>
             </form>
@@ -26,7 +26,7 @@ const Carousel = () => {
           <div className="carousel-item active">
             <img
               src="https://source.unsplash.com/random/900x700?vegetable"
-              class="d-block w-100"
+              className="d-block w-100"
               alt="..."
               style={{ filter: "brightness(30%" }}
             />
@@ -34,7 +34,7 @@ const Carousel = () => {
           <div className="carousel-item">
             <img
               src="https://source.unsplash.com/random/900x700?fruits"
-              class="d-block w-100"
+              className="d-block w-100"
               alt="..."
               style={{ filter: "brightness(30%" }}
             />
@@ -42,7 +42,7 @@ const Carousel = () => {
           <div className="carousel-item">
             <img
               src="https://source.unsplash.com/random/900x700?cereals"
-              class="d-block w-100"
+              className="d-block w-100"
               alt="..."
               style={{ filter: "brightness(30%" }}
             />

@@ -14,6 +14,10 @@ import Cart from "./screens/Cart.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <App />,
+  },
+  {
+    path: "/customer",
     element: <Home />,
   },
   {

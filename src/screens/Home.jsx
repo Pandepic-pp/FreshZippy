@@ -35,14 +35,17 @@ const Home = () => {
   console.log(vegetableShops);
   console.log(breadShops);
   console.log(grainShops);
-
+  
+  const h1Color = {
+    color: "black",
+  }
   return (
     <div>
       <Navbar>
         <Carousel />
-        <Container className="m-3">
-          <div className="vegetableShops">
-            <h1>Vegetables and Fruits</h1>
+        <Container style={{width: "100vw"}}>
+          <div className="vegetableShops"  style={{width: "100vw", background: "white", padding:"40px 20px"}}>
+            <h1 style={h1Color}>Vegetables and Fruits</h1>
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               {vegetableShops.map((item, index) => (
                 <Link
@@ -56,8 +59,8 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="breadShops">
-            <h1>Bread and Dairy</h1>
+          <div className="breadShops" style={{width: "100vw", background: "#D6D5D2", padding:"40px 20px"}}>
+            <h1 style={h1Color}>Bread and Dairy</h1>
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               {breadShops.map((item, index) => (
                 <Link
@@ -71,8 +74,8 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="grainShops">
-            <h1>Grains and Cereals</h1>
+          <div className="grainShops" style={{width: "100vw", background: "white", padding:"40px 20px"}}>
+            <h1 style={h1Color}>Grains and Cereals</h1>
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               {grainShops.map((item, index) => (
                 <Link
@@ -101,7 +104,6 @@ const Container = styled.div`
   .vegetableShops,
   .breadShops,
   .grainShops {
-    margin: 20px;
     text-align: center;
   }
 `;

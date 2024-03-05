@@ -81,42 +81,44 @@ const ShopPage = () => {
             <Product key={index}>
               <div className="productInfo">
                 <h2>{element}</h2>
-                <div
-                  className="buttons"
-                  style={{
-                    display: "flex",
-                    gap: "20px",
-                  }}
-                >
-                  <button
-                    className="btn btn-danger"
-                    value={itemFrequency[element]}
-                    onClick={(e) =>
-                      handleChange(element, parseInt(e.target.value), "PLUS")
-                    }
-                  >
-                    +
-                  </button>
-                  <button
-                    className="btn btn-danger"
-                    value={itemFrequency[element]}
-                    onClick={(e) =>
-                      handleChange(element, parseInt(e.target.value), "MINUS")
-                    }
-                  >
-                    -
-                  </button>
+                {!isNaN(itemFrequency[element]) && ( // Conditionally render buttons if itemFrequency[element] is not NaN
                   <div
-                    className="frequency"
+                    className="buttons"
                     style={{
                       display: "flex",
-                      alignItems: "center",
-                      width: "100px",
+                      gap: "20px",
                     }}
                   >
-                    Total: {itemFrequency[element] / 2} kg
+                    <button
+                      className="btn btn-danger"
+                      value={itemFrequency[element]}
+                      onClick={(e) =>
+                        handleChange(element, parseInt(e.target.value), "PLUS")
+                      }
+                    >
+                      +
+                    </button>
+                    <button
+                      className="btn btn-danger"
+                      value={itemFrequency[element]}
+                      onClick={(e) =>
+                        handleChange(element, parseInt(e.target.value), "MINUS")
+                      }
+                    >
+                      -
+                    </button>
+                    <div
+                      className="frequency"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        width: "100px",
+                      }}
+                    >
+                      Total: {itemFrequency[element] / 2} kg
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </Product>
           ))}
@@ -140,12 +142,12 @@ const ProductContainer = styled.div`
   justify-content: start;
   align-items: center;
   position: relative;
-  margin: 2%;
+  margin: auto 2%;
   width: 40%;
 `;
 
 const Product = styled.div`
-  background-color: #00bc8c;
+  background-color: #28a745;
   margin: 20px;
   width: 100%;
   height: 100px;
@@ -166,7 +168,7 @@ const TotalCost = styled.div`
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background-color: #00bc8c;
+  background-color: #28a745;
   padding: 10px;
   border-radius: 5px;
   width: 200px;
