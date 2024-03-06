@@ -10,6 +10,7 @@ import { TokenProvider } from "./context/storeContext.jsx";
 import UserContent from "./screens/UserContent.jsx";
 import ShopPage from "./screens/ShopPage.jsx";
 import Cart from "./screens/Cart.jsx";
+import Supplier from "./screens/Supplier.jsx"
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/customer",
     element: <Home />,
+  },
+  {
+    path: "/supplier",
+    element: <Supplier />
   },
   {
     path: "/signup",

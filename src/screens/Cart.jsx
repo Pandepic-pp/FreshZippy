@@ -27,8 +27,8 @@ const Cart = () => {
     <Navbar>
       <div
         style={{
-          backgroundImage:
-            "url('https://media.istockphoto.com/id/170034281/photo/healthy-organic-vegetables-on-a-wooden-background.jpg?s=2048x2048&w=is&k=20&c=u2w8PYRf5rAlz3dTz85us7POzKLDSK2MP9Q_xmbZj8Y=')",
+          background: "#f8f4f1",
+          minHeight: "calc(100vh - 6rem)",
         }}
       >
         <MainContainer>
@@ -75,9 +75,9 @@ const MainContainer = styled.div`
   }
   button {
     margin-bottom: 4rem;
-    width: 200px;
-    height: 75px;
-    font-size: 1.5rem;
+    width: 100px;
+    height: 50px;
+    font-size: 1rem;
   }
 `;
 

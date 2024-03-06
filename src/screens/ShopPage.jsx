@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+// ShopPage.js
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import styled from "styled-components";
@@ -18,9 +19,9 @@ const ShopPage = () => {
       const data = await response.json();
       setPrice(data);
       // Initialize itemFrequency with all items having frequency 0
-      const initialItemFrequency = {};
+      const initialItemFrequency = JSON.parse(localStorage.getItem('itemFrequency')) || {};
       for (const item in data) {
-        initialItemFrequency[item] = 0;
+        initialItemFrequency[item] = initialItemFrequency[item] || 0;
       }
       setItemFrequency(initialItemFrequency);
     } catch (error) {
@@ -32,6 +33,11 @@ const ShopPage = () => {
     setShopStorage(location.state);
     fetchApi();
   }, [location.state]);
+
+  useEffect(() => {
+    // Store itemFrequency in localStorage whenever it changes
+    localStorage.setItem('itemFrequency', JSON.stringify(itemFrequency));
+  }, [itemFrequency]);
 
   const { shopName, shopImg, options } = shopStorage.item;
 
@@ -68,17 +74,19 @@ const ShopPage = () => {
         className="mainContainer"
         style={{
           height: "100%",
-          backgroundImage:
-            "url('https://media.istockphoto.com/id/170034281/photo/healthy-organic-vegetables-on-a-wooden-background.jpg?s=2048x2048&w=is&k=20&c=u2w8PYRf5rAlz3dTz85us7POzKLDSK2MP9Q_xmbZj8Y=')",
+          width: "100vw",
         }}
       >
         <ProductContainer>
+          <div style={{background: "#f8f4f1", width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}}>
           <Product>
             <h1>{shopName}</h1>
           </Product>
-
+          </div>
+        
           {shopItems.map((element, index) => (
-            <Product key={index}>
+            <div style={{background: index % 2 === 1 ? "#f8f4f1" : "white", width: "100%", display: "flex", justifyContent: "center", alignItems: "center"}} key={index} >
+            <Product >
               <div className="productInfo">
                 <h2>{element}</h2>
                 {!isNaN(itemFrequency[element]) && ( // Conditionally render buttons if itemFrequency[element] is not NaN
@@ -121,6 +129,7 @@ const ShopPage = () => {
                 )}
               </div>
             </Product>
+            </div>
           ))}
         </ProductContainer>
       </div>
@@ -142,14 +151,13 @@ const ProductContainer = styled.div`
   justify-content: start;
   align-items: center;
   position: relative;
-  margin: auto 2%;
-  width: 40%;
+  width: 100%;
 `;
 
 const Product = styled.div`
   background-color: #28a745;
   margin: 20px;
-  width: 100%;
+  width: 40%;
   height: 100px;
   border-radius: 10px;
   display: flex;

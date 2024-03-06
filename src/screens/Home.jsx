@@ -35,16 +35,23 @@ const Home = () => {
   console.log(vegetableShops);
   console.log(breadShops);
   console.log(grainShops);
-  
+
   const h1Color = {
     color: "black",
-  }
+  };
   return (
     <div>
       <Navbar>
         <Carousel />
-        <Container style={{width: "100vw"}}>
-          <div className="vegetableShops"  style={{width: "100vw", background: "white", padding:"40px 20px"}}>
+        <Container style={{ width: "100vw" }}>
+          <div
+            className="vegetableShops"
+            style={{
+              width: "100vw",
+              background: "white",
+              padding: "40px 20px",
+            }}
+          >
             <h1 style={h1Color}>Vegetables and Fruits</h1>
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               {vegetableShops.map((item, index) => (
@@ -59,7 +66,14 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="breadShops" style={{width: "100vw", background: "#D6D5D2", padding:"40px 20px"}}>
+          <div
+            className="breadShops"
+            style={{
+              width: "100vw",
+              background: "#f8f4f1",
+              padding: "40px 20px",
+            }}
+          >
             <h1 style={h1Color}>Bread and Dairy</h1>
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               {breadShops.map((item, index) => (
@@ -74,7 +88,14 @@ const Home = () => {
               ))}
             </div>
           </div>
-          <div className="grainShops" style={{width: "100vw", background: "white", padding:"40px 20px"}}>
+          <div
+            className="grainShops"
+            style={{
+              width: "100vw",
+              background: "white",
+              padding: "40px 20px",
+            }}
+          >
             <h1 style={h1Color}>Grains and Cereals</h1>
             <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               {grainShops.map((item, index) => (

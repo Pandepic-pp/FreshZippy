@@ -8,55 +8,61 @@ const Navbar = ({ children }) => {
   return (
     <>
       <div>
-        <nav className="navbar navbar-expand-lg navbar-dark" style={{background: "#28a745"}}>
-          <div className="container-fluid">
-            <Link className="navbar-brand fs-1 fst-italic" to="/">
+        <nav
+          className="navbar navbar-expand-lg navbar-dark"
+          style={{ background: "#28a745", height: "100px"}}
+        >
+          <div className="container-fluid" style={{ width: "100%",display: "flex", justifyContent: "space-evenly" }}>
+            <Link className="navbar-brand fs-1 fst-italic" to="/customer">
               <h1 style={{ fontSize: "2.5rem" }}>FreshZippy</h1>
             </Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+            <div
+              class="input-group"
+              style={{ height: "100%", width: "50%"}}
             >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <div className="navbar-nav">
-                <NavDiv>
-                  {/* <div className="homePage">
-                    <Link
-                      className="nav-link active"
-                      aria-current="page"
-                      href="#"
-                      to="/"
-                    >
-                      Home
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Search"
+                aria-label="Search"
+                aria-describedby="search-addon"
+              />
+              <button
+                type="button"
+                class="btn btn-success"
+                data-mdb-ripple-init
+              >
+                search
+              </button>
+            </div>
+            <div
+              className="navbar-nav"
+              style={{ display: "flex", width: "20%", justifyContent: "end" }}
+            >
+              <div className="userLinks" style={{marginRight:"20px"}}>
+                {getTokenCheck.getTokenInLS() == undefined ||
+                getTokenCheck.getTokenInLS() == null ? (
+                  <div
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "end",
+                    }}
+                  >
+                    <Link className="nav-link" to="/signup">
+                      <div style={{ fontSize: "1rem" }}>Sign up</div>
                     </Link>
-                  </div> */}
-                  <div className="userLinks">
-                    {getTokenCheck.getTokenInLS() == undefined ||
-                    getTokenCheck.getTokenInLS() == null ? (
-                      <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                        <Link className="nav-link" to="/signup">
-                          <p style={{ fontSize: "1rem" }}>Sign up</p>
-                        </Link>
-                        <Link className="nav-link" to="/signin">
-                          <p style={{ fontSize: "1rem" }}>Sign in</p>
-                        </Link>
-                      </div>
-                    ) : (
-                      <>
-                        <Link className="nav-link " to="/userContent">
-                          MemberShip Content
-                        </Link>
-                      </>
-                    )}
+                    <Link className="nav-link" to="/signin">
+                      <div style={{ fontSize: "1rem" }}>Sign in</div>
+                    </Link>
                   </div>
-                </NavDiv>
+                ) : (
+                  <>
+                    <Link className="nav-link " to="/userContent">
+                      MemberShip Content
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -68,13 +74,3 @@ const Navbar = ({ children }) => {
 };
 
 export default Navbar;
-
-const NavDiv = styled.div`
-  display: flex;
-  align-items: center;
-  width: 80vw;
-  justify-content: end;
-  .userLinks {
-    display: flex;
-  }
-`;
